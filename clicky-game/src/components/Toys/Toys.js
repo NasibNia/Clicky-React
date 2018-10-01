@@ -25,16 +25,16 @@ class Toys extends Component {
   }
 
   handleGuess = id => {
-    console.log(this.state.toys);
-    let currentToy = this.state.toys[id];
-    console.log(currentToy)
+    // console.log(this.state.toys);
+    let currentToy = this.state.toys.filter(x=>(x.id === id))[0];
+    // console.log(currentToy)
     if (currentToy.guessed === true){
       alert("you lost; start over");
       this.Restart();
     } else {
-      this.state.toys[id].guessed = true;
+      currentToy.guessed = true;
       this.Shuffle(this.state.toys);
-      this.setState({toys :toys , score : this.state.score + 1 });
+      this.setState({toys : this.state.toys , score : this.state.score + 1 });
     }
   }
   Max = (a,b) =>{
@@ -46,7 +46,7 @@ class Toys extends Component {
   }
 
   Restart = () =>{
-
+    console.log(this.state.toys.map(x => (x.guessed = false)))
     this.setState({toys : (this.state.toys.map(x => (x.guessed = false))),
     topScore : this.Max(this.state.score , this.state.topScore),
     score : 0});
