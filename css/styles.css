@@ -1,0 +1,25 @@
+.anim-appear {
+    opacity: 0.01;
+  }
+   
+  .anim-appear.anim-appear-active{
+    opacity: 2;
+    transition: opacity 5s ease-in;
+  }
+
+  body{ 
+    /* The image used */
+    background-image: url("../images/pic15.jpg");
+
+    /* Set a specific height */
+    height: 1000px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Prompt', sans-serif;
+
+}
+
