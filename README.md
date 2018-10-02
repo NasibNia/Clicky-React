@@ -6,7 +6,7 @@ This is my first game built in wonderful React! It is a memory game that provide
 All the front module is built in react. 
 Check out the website and challenge your memory. 
 
-[Clicky React] (https://nasibnia.github.io/Clicky-React/)
+[Clicky React](https://nasibnia.github.io/Clicky-React/)
 
 
 
