@@ -6,7 +6,8 @@ import toys from "./toys.json";
 import Container from './Container';
 import Row from "./Row"
 import Col from "./Col"
-
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import Jumbotron from "./Jumbotron"
 
 class Toys extends Component {
 
@@ -28,7 +29,6 @@ class Toys extends Component {
   handleGuess = id => {
     let currentToy = this.state.toys.filter(x=>(x.id === id))[0];
     if (currentToy.guessed === true){
-      alert("you lost; start over");
       this.Restart();
     } else {
       currentToy.guessed = true;
@@ -63,8 +63,14 @@ class Toys extends Component {
     render() {
       return (
         <Container>
+          <Jumbotron text='Welcome to My Clicky React App!'
+                    image = "./images/pic15.jpg"
+                    subtext = "Enjoy the game"
+                      >
+                      <Navbar score = {this.state.score} topScore={this.state.topScore}/>
+          </Jumbotron>
           <Row>
-            <Navbar score = {this.state.score} topScore={this.state.topScore}/>
+            
           </Row>
           <Row>
             {this.state.toys.map (x => (
