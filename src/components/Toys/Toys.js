@@ -16,6 +16,7 @@ class Toys extends Component {
     topScore : 0
   };
 
+
   Shuffle = array => {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -25,9 +26,7 @@ class Toys extends Component {
   }
 
   handleGuess = id => {
-    // console.log(this.state.toys);
     let currentToy = this.state.toys.filter(x=>(x.id === id))[0];
-    // console.log(currentToy)
     if (currentToy.guessed === true){
       alert("you lost; start over");
       this.Restart();
@@ -46,10 +45,19 @@ class Toys extends Component {
   }
 
   Restart = () =>{
-    console.log(this.state.toys.map(x => (x.guessed = false)))
-    this.setState({toys : (this.state.toys.map(x => (x.guessed = false))),
-    topScore : this.Max(this.state.score , this.state.topScore),
-    score : 0});
+    // console.log(this.state.toys.map(x => {(x.id = x.id),(x.image = x.image),(x.guessed = false)}));
+    for (let i = 0; i < this.state.toys.length; i++) {
+      this.state.toys[i].guessed = false; 
+    }
+    // const restartToys = this.state.toys.map(x => {x.id= x.id,x.image=x.image,x.guessed = false})
+    // this.setState({toys : restartToys,
+    //               topScore : this.Max(this.state.score , this.state.topScore),
+    //               score : 0})
+    this.Shuffle(this.state.toys);
+    this.setState({toys : this.state.toys,
+                   topScore : this.Max(this.state.score , this.state.topScore),
+                   score : 0})
+
   }
 
     render() {
@@ -66,7 +74,7 @@ class Toys extends Component {
                             image = {x.image}
                             handleGuess={this.handleGuess}
               />
-            ))};
+            ))};            
           </Row>
         </Container> 
       );
