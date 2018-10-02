@@ -23,3 +23,14 @@
 
 }
 
+.jumbotron{
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    background-image: url("../images/pic15.jpg");
+    line-height: 10;
+    height: 300;
+    clear: "both";
+    padding-top: 120;
+    text-align: "center"
+
+}
