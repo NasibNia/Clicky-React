@@ -1,3 +1,15 @@
+# Clicky React!
+
+![totoro](public/images/pic15.jpg)
+This is my first game built in wonderful React! It is a memory game that provides users bunch 12 cards. by clicking each card that hasn't been clicked user gains a point while by clicking the ones that already picked game restarts while the topest score is kept on the file for user reference.
+
+All the front module is built in react. 
+Check out the website and challenge your memory. 
+
+[Clicky React] (https://nasibnia.github.io/Clicky-React/)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
